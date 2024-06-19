@@ -2,14 +2,19 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
-const websitesController = require('./controller/websites')
+const homeRouter = require('./controller/home');
+const templateRouter = require('./controller/templates');
+const galleryRouter = require('./controller/gallery');
 const port = 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
-app.use('/sitefy', websitesController)
 app.use(express.static('public')); 
+
+app.use('/sitefy', homeRouter);
+app.use('/sitefy/templates', templateRouter);
+app.use('/sitefy/gallery', galleryRouter);
 
 const mongoURI = "mongodb://127.0.0.1:27017/websites"
 
