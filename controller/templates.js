@@ -14,7 +14,7 @@ const Template4 = require('../models/template4');
 
 // temporary to see the website template
 router.get('/', (req, res) => {
-    res.render('templates/template1.ejs')
+    res.render('templates/template2.ejs')
 })
 
 // NEW

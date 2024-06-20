@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <title>Shop Template</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .split {
+            display: flex;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .left,
+        .right {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .left {
+            background-image: url('<%= leftImage %>');
+        }
+
+        .right {
+            background-image: url('<%= rightImage %>');
+        }
+
+        .website-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            font-weight: bolder;
+            z-index: 3;
+            color: <%= titleColor %>; 
+        }
+
+        .navbar {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+        }
+
+        .nav-link {
+            color: <%= navLinkColor %> !important;
+            font-weight: bold;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .btn-custom {
+            background-color: <%= buttonBackgroundColor %>; 
+            color: <%= buttonTextColor %>;
+            font-weight: bold;
+        }
+
+        .nav-item {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="website-title"><%= title %></div>
+
+    <nav class="navbar navbar-expand-lg navbar-transparent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">COLLECTIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SALE</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CART</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="split">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="content text-center">
+            <button class="btn btn-custom">SHOP <%= shopitem %></button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

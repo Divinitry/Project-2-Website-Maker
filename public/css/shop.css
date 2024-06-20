@@ -1,6 +1,16 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
 .split {
     display: flex;
     height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 .left,
@@ -11,17 +21,35 @@
 }
 
 .left {
-    background-image: url('path_to_left_image');
+    background-image: url('/images/clothes1.jpg');
 }
 
 .right {
-    background-image: url('path_to_right_image');
+    background-image: url('/images/clothes2.jpg');
+}
+
+.website-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    font-weight: 1000;
+    font-family: 'Oswald', sans-serif; 
+    z-index: 3;
+    letter-spacing: -1px;
 }
 
 .navbar {
-    position: absolute;
     width: 100%;
-    z-index: 1;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.nav-link {
+    color: black;
+    font-weight: bold;
 }
 
 .content {
@@ -29,11 +57,11 @@
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .btn-custom {
-    background-color: yellow;
-    color: black;
+    background-color: rgb(127, 113, 107);
+    color: white;
     font-weight: bold;
 }
