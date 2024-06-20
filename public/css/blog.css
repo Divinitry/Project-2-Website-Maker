@@ -1,0 +1,145 @@
+.container1 {
+    width: 70%;
+}
+
+.navbar {
+    font-size: x-small;
+}
+
+.brand-name {
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: grey;
+    margin-top: -15px;
+    text-align: right;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: grey;
+}
+
+.title-card {
+    text-align: center;
+    height: 170px;
+}
+
+.second-nav {
+    font-size: small;
+}
+
+.carousel-div {
+    margin-top: 30px;
+}
+
+.carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    opacity: 80%;
+    background-color: black;
+}
+
+.btn {
+    border-radius: 0;
+    background-color: black;
+}
+
+.container2 {
+    margin-top: 50px;
+    width: 70%;
+    margin-bottom: 40px;
+}
+
+.row-gap {
+    margin-top: 30px; /* Adjust the gap as needed */
+}
+
+.col {
+    height: 50%;
+}
+
+.blog-post-image {
+    width: 70%;
+    height: auto;
+}
+
+.subtitle-p {
+    text-align: left;
+    color: grey;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.post-p {
+    text-align: left;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: grey;
+}
+
+.post-h4 {
+    text-align: left;
+}
+
+.post-thumbnail {
+    position: relative;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 20%;
+}
+
+.overlay-text {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer .nav {
+    margin-bottom: 10px;
+}
+
+.footer .nav-link {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.footer .nav-link:hover {
+    color: #343a40;
+}
+
+.footer .social-nav .nav-link {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.footer .copyright {
+    font-size: 14px;
+    color: #6c757d;
+}

@@ -1,0 +1,39 @@
+.split {
+    display: flex;
+    height: 100vh;
+}
+
+.left,
+.right {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.left {
+    background-image: url('path_to_left_image');
+}
+
+.right {
+    background-image: url('path_to_right_image');
+}
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.content {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.btn-custom {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
