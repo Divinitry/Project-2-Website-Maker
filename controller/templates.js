@@ -8,14 +8,14 @@ const Template4 = require('../models/template4');
 // I N D U C E S 
 
 // INDEX
-// router.get('/', (req, res) => {
-//     res.render('templates/index.ejs')
-// })
+router.get('/', (req, res) => {
+    res.render('templates/index.ejs')
+})
 
 // temporary to see the website template
-router.get('/', (req, res) => {
-    res.render('templates/template4.ejs')
-})
+// router.get('/', (req, res) => {
+//     res.render('templates/template4.ejs')
+// })
 
 // NEW
 
