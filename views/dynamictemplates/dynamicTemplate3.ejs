@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/news.css">
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="header">
+            <h2 class="title"><%=newstitle%>></h2>
+            <nav class="navbar navbar-expand-lg justify-content-center">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Business </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Politics </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Obituaries </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">City Life </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Food </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">TV and radio</a>
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-3 sidebar d-flex flex-column justify-content-between">
+                <div class="news-section">
+                    <h3><%=subtitle1%>></h3>
+                    <p><%=paragraph1%></p>
+                </div>
+                <div class="news-section">
+                    <h3><%=subtitle2%></h3>
+                    <p><%=paragraph2%></p>
+                </div>
+                <div class="news-section">
+                    <h3><%=subtitle3%></h3>
+                    <p><%=paragraph3%></p>
+                </div>
+                <div class="news-section">
+                    <h3><%=subtitle4%></h3>
+                    <p><%=paragraph4%></p>
+                </div>
+                <div class="news-section">
+                    <h3><%=subtitle5%></h3>
+                    <p><%=paragraph5%></p>
+                </div>
+            </div>
+            <div class="col-md-9 content">
+                <h2 class="h2"><%=headline%></h2>
+                <div class="headline-container">
+                    <img src="<%=headlineimage%>" class="headline-image">
+                    <div class="headline-text-box">
+                        <p class="content-p"><%=headlinep%>!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
