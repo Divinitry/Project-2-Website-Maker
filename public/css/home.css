@@ -3,8 +3,12 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Freight Sans Medium SC', Arial, sans-serif;
     overflow-x: hidden;
+}
+
+.bluetext{
+    color: #0046ba;
 }
 
 .navbar-light.bg-transparent {
@@ -14,21 +18,46 @@ body, html {
 .navbar-light .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: #0046ba;
 }
 
 .navbar-light .navbar-nav .nav-link {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    color: white;
+    color: black;
+}
+
+.nav-text{
+    position: relative;
+}
+
+.nav-text:after{
+    content: "";
+    position: absolute;
+    background-color: #0046ba;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.4s;
+}
+
+.nav-text:hover:after{
+    content: "";
+    position: absolute;
+    background-color: #0046ba;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #ddd;
+    color: #2a2a2a;
 }
 
 .navbar-light .navbar-nav .nav-item.active .nav-link {
-    color: #fff;
+    color: #2a2a2a;
 }
 
 .navbar-light .navbar-toggler {
@@ -41,25 +70,12 @@ body, html {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('/images/clean.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: #eaeaea;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
-    z-index: -1;
-}
-
-.bg-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    color: black;
     z-index: -1;
 }
 
@@ -71,14 +87,21 @@ body, html {
 .titleH1 {
     font-size: 5rem;
     font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 20px;
+    text-decoration-thickness: 2px;
 }
 
 .titleP {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
+}
+
+.sitefy{
+    color: #0046ba;
 }
 
 .overlay-content {
-    background: rgba(0, 0, 0, 0.967); 
+    background: black; 
     padding: 35px 0;
     margin-top: 92vh; 
     z-index: 3;
@@ -91,8 +114,15 @@ body, html {
     position: relative; 
 }
 
+.headerp {
+    color: white;
+}
+
 .titleH2 {
     font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 1px;
 }
 
 .arrow-up {
@@ -102,4 +132,11 @@ body, html {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+@font-face {
+    font-family: 'Freight Sans Medium SC';
+    src: url('/fonts/Freight Sans Medium SC.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
