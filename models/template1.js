@@ -27,7 +27,8 @@ const template1Schema = new Schema({
     image3: { type: String, required: true },
     blogName: { type: String, required: true },
     blogPost: { type: String, required: true },
-    iconImage1: { type: String, required: true }
+    iconImage1: { type: String, required: true },
+    iconImage2: { type: String, required: true }
 });
 
 const Template1 = mongoose.model('Template1', template1Schema);

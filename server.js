@@ -1,13 +1,18 @@
 const express = require('express')
 const app = express()
+
 const methodOverride = require('method-override')
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+
 const homeRouter = require('./controller/home');
 const templateRouter = require('./controller/templates');
 const galleryRouter = require('./controller/gallery');
+
 const port = 3000;
 
 // Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 app.use(express.static('public')); 

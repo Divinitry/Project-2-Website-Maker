@@ -123,3 +123,19 @@ body {
     text-decoration: underline 3px solid black;
     text-underline-offset: 10px;
 }
+
+.fixed-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    padding: 5px;
+    text-align: center;
+    z-index: 999;
+}
+
+.fixed-icon i {
+    font-size: 3rem;
+    padding: 10px;
+    border-radius: 50%;
+}

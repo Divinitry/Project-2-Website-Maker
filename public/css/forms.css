@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Freight Sans Medium SC', Arial, sans-serif;
+    font-size: 100%;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100%;
+    background-color: #eaeaea;
+}
+
+.bluetext {
+    color: #0046ba;
+}
+
+.navbar-light.bg-transparent {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.navbar-light .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0046ba;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    color: black;
+}
+
+.nav-text {
+    position: relative;
+}
+
+.nav-text:after {
+    content: "";
+    position: absolute;
+    background-color: #0046ba;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.4s;
+}
+
+.nav-text:hover:after {
+    content: "";
+    position: absolute;
+    background-color: #0046ba;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #2a2a2a;
+}
+
+.navbar-light .navbar-nav .nav-item.active .nav-link {
+    color: #2a2a2a;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+@font-face {
+    font-family: 'Freight Sans Medium SC';
+    src: url('/fonts/Freight Sans Medium SC.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+.template-container {
+    width: 50%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    margin-right: 10px;
+    font-weight: bold;
+    flex: 1;
+    text-transform: lowercase;
+}
+
+.form-group input[type="color"] {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-buttons {
+    text-align: center;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0046ba;
+    color: #fff;
+}
+
+.form-buttons button[type="reset"] {
+    background-color: #ccc;
+}

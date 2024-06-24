@@ -82,6 +82,29 @@ body, html {
     color: black;
 }
 
+.card{
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.4); 
+}
+
+.card-title{
+    font-size: 1.4rem;
+    text-align: left;
+    text-decoration: overline;
+    text-decoration-thickness: 2px;
+}
+
+.card-text{
+    margin-top: -5px;
+    text-align: left;
+}
+
 .col-sm {
     text-align: center;
     align-items: center;
@@ -91,22 +114,41 @@ body, html {
     z-index: 2;
     position: relative;
     margin-bottom: 0;
-    margin-top: -60px;
+    margin-top: -30px;
     background-color: transparent;
-}
-
-.card{
-    -webkit-box-shadow: 0px 0px 28px 11px rgba(255,255,255,0.5); 
-    box-shadow: 0px 0px 28px 11px rgba(255,255,255,0.5);
+    padding-top: 10px;
 }
 
 .card-img-top{
-    border-radius: 2px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.card-image-wrapper {
+    position: relative;
+}
+
+.icon-top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: grey;
+    font-size: 1.2rem;
 }
 
 .btn{
-    background-color:rgb(0, 0, 0);
+    background-color:#0046ba;
     border: none;
+    border-radius: 5px;
+}
+
+hr{
+    margin-bottom: -10px;
+    margin-top: 30px;
+    border-width: 2px;
+    border-color: black;
 }
 
 h5{
@@ -118,4 +160,13 @@ h5{
     src: url('/fonts/Freight Sans Medium SC.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    flex-grow: 1;
 }

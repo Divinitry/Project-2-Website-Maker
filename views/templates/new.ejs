@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>New Template</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                sitefy
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/sitefy/"><span class="nav-text">home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sitefy/templates"><span class="nav-text">templates</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sitefy/gallery"><span class="nav-text">gallery</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center">
+    <h1>
+        <% if (template === 'template1'){ %>
+            create your blog website!
+        <%} else if (template === 'template2') {%>
+            create your shop website!
+        <%} else if (template === 'template3') {%>
+            create your news website!
+        <%} else if (template === 'template4') {%>
+            create your restaurant website!
+        <%}%>
+    </h1>
+    </div>
+
+    <div class="container template-container">
+        <form action="/sitefy/templates/create" method="POST">
+            <input type="hidden" name="template" value="<%= template %>">
+            <% if (template === 'template1') { %>
+                <div class="form-group">
+                    <label for="navbarBgColor">navbar background color:</label>
+                    <input type="color" class="form-control colorbox" id="navbarBgColor" name="navbarBgColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="navbarBrandColor">navbar brand color:</label>
+                    <input type="color" class="form-control colorbox" id="navbarBrandColor" name="navbarBrandColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="navbarLinkColor">navbar link color:</label>
+                    <input type="color" class="form-control colorbox" id="navbarLinkColor" name="navbarLinkColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="titleColor">title color:</label>
+                    <input type="color" class="form-control colorbox" id="titleColor" name="titleColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitleColor">subtitle color:</label>
+                    <input type="color" class="form-control colorbox" id="subtitleColor" name="subtitleColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="secondNavbarBgColor">second navbar background color:</label>
+                    <input type="color" class="form-control colorbox" id="secondNavbarBgColor" name="secondNavbarBgColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="buttonBgColor">button background color:</label>
+                    <input type="color" class="form-control colorbox" id="buttonBgColor" name="buttonBgColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="buttonTextColor">button text color:</label>
+                    <input type="color" class="form-control colorbox" id="buttonTextColor" name="buttonTextColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="secondNavLinkColor">second navbar link color:</label>
+                    <input type="color" class="form-control colorbox" id="secondNavLinkColor" name="secondNavLinkColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitlePColor">subtitle paragraph color:</label>
+                    <input type="color" class="form-control colorbox" id="subtitlePColor" name="subtitlePColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="postH4Color">post header color:</label>
+                    <input type="color" class="form-control colorbox" id="postH4Color" name="postH4Color" required>
+                </div>
+                <div class="form-group">
+                    <label for="postPColor">post paragraph color:</label>
+                    <input type="color" class="form-control colorbox" id="postPColor" name="postPColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="overlayBgColor">overlay background color:</label>
+                    <input type="color" class="form-control colorbox" id="overlayBgColor" name="overlayBgColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="overlayTextColor">overlay text color:</label>
+                    <input type="color" class="form-control colorbox" id="overlayTextColor" name="overlayTextColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="footerBgColor">footer background color:</label>
+                    <input type="color" class="form-control colorbox" id="footerBgColor" name="footerBgColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="footerNavLinkColor">footer navbar link color:</label>
+                    <input type="color" class="form-control colorbox" id="footerNavLinkColor" name="footerNavLinkColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="footerSocialLinkColor">footer social link color:</label>
+                    <input type="color" class="form-control" id="footerSocialLinkColor" name="footerSocialLinkColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="copyrightTextColor">copyright text color:</label>
+                    <input type="color" class="form-control" id="copyrightTextColor" name="copyrightTextColor" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">company name:</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="brandName">brand name:</label>
+                    <input type="text" class="form-control" id="brandName" name="brandName" required>
+                </div>
+                <div class="form-group">
+                    <label for="image1">image 1 url:</label>
+                    <input type="text" class="form-control" id="image1" name="image1" required>
+                </div>
+                <div class="form-group">
+                    <label for="image2">image 2 url:</label>
+                    <input type="text" class="form-control" id="image2" name="image2" required>
+                </div>
+                <div class="form-group">
+                    <label for="image3">image 3 url:</label>
+                    <input type="text" class="form-control" id="image3" name="image3" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogName">blog name:</label>
+                    <input type="text" class="form-control" id="blogName" name="blogName" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogPost">blog post:</label>
+                    <textarea class="form-control" id="blogPost" name="blogPost" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="iconImage1">icon image 1 url:</label>
+                    <input type="text" class="form-control" id="iconImage1" name="iconImage1" required>
+                </div>
+                <div class="form-group">
+                    <label for="iconImage2">icon image 2 url:</label>
+                    <input type="text" class="form-control" id="iconImage2" name="iconImage1" required>
+                </div>       
+            
+            <% } else if (template === 'template2') { %>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="leftImage">Left Image:</label>
+                    <input type="text" class="form-control" id="leftImage" name="leftImage" required>
+                </div>
+
+            <% } else if (template === 'template3') { %>
+
+                <div class="form-group">
+                    <label for="newstitle">News Title:</label>
+                    <input type="text" class="form-control" id="newstitle" name="newstitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle1">Subtitle 1:</label>
+                    <input type="text" class="form-control" id="subtitle1" name="subtitle1" required>
+                </div>
+
+            <% } else if (template === 'template4') { %>
+
+                <div class="form-group">
+                    <label for="restaurantname">Restaurant Name:</label>
+                    <input type="text" class="form-control" id="restaurantname" name="restaurantname" required>
+                </div>
+                <div class="form-group">
+                    <label for="backgroundimage">Background Image:</label>
+                    <input type="text" class="form-control" id="backgroundimage" name="backgroundimage" required>
+                </div>
+
+            <% } %>
+            <div class="form-buttons">
+                <button type="submit">submit</button>
+                <button type="reset">reset</button>
+            </div>  
+        </form>
+    </div>
+</body>
+</html>

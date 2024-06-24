@@ -65,3 +65,19 @@ html {
     color: white;
     font-weight: bold;
 }
+
+.fixed-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    padding: 5px;
+    text-align: center;
+    z-index: 3;
+}
+
+.fixed-icon i {
+    font-size: 3rem;
+    padding: 10px;
+    border-radius: 50%;
+}
