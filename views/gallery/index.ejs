@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="/css/gallery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Gallery</title>
+    <link rel="icon" href="/images/favicon_io/favicon-16x16.png" type="image/png">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container">
             <a class="navbar-brand" href="#">
                 sitefy
@@ -33,7 +34,7 @@
         </div>
     </nav>
 
-    <div class="container title-container d-flex justify-content-center"><h1>gallery</h1></div>
+    <div class="container title-container d-flex justify-content-start"><h1>gallery</h1></div>
 
     <div class="container gallery-container">
         <div class="row">
@@ -41,28 +42,80 @@
                 <div class="col-md-6 mb-4">
                     <div class="card">
                         <% if (templates[i].templateType === 'template1') { %>
-                            <img src="<%= templates[i].image1 %>" class="card-img-top" alt="Template Image">
-                            <div class="card-body">
+                            <div class="card-img-container">
+                                <img src="<%= templates[i].image1 %>" class="card-img-top" alt="Template Image">
+                                <div class="overlay-box"></div>
                                 <h5 class="card-title"><%= templates[i].companyName %></h5>
-                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn btn-primary">View Template</a>
+                            </div>
+                            <div class="card-body bg-transparent d-flex justify-content-center">
+                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn mr-2">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="/sitefy/templates/<%= templates[i]._id %>/edit?type=<%= templates[i].templateType %>" class="btn mr-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <form action="/sitefy/templates/<%= templates[i]._id %>?_method=DELETE&type=<%= templates[i].templateType %>" method="POST" class="m-0">
+                                    <button type="submit" class="btn">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         <% } else if (templates[i].templateType === 'template2') { %>
-                            <img src="<%= templates[i].leftImage %>" class="card-img-top" alt="Template Image">
-                            <div class="card-body">
+                            <div class="card-img-container">
+                                <img src="<%= templates[i].leftImage %>" class="card-img-top" alt="Template Image">
+                                <div class="overlay-box"></div>
                                 <h5 class="card-title"><%= templates[i].title %></h5>
-                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn btn-primary">View Template</a>
+                            </div>
+                            <div class="card-body bg-transparent d-flex justify-content-center">
+                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn mr-2">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="/sitefy/templates/<%= templates[i]._id %>/edit?type=<%= templates[i].templateType %>" class="btn mr-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <form action="/sitefy/templates/<%= templates[i]._id %>?_method=DELETE&type=<%= templates[i].templateType %>" method="POST" class="m-0">
+                                    <button type="submit" class="btn">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         <% } else if (templates[i].templateType === 'template3') { %>
-                            <img src="<%= templates[i].headlineimage %>" class="card-img-top" alt="Template Image">
-                            <div class="card-body">
+                            <div class="card-img-container">
+                                <img src="<%= templates[i].headlineimage %>" class="card-img-top" alt="Template Image">
+                                <div class="overlay-box"></div>
                                 <h5 class="card-title"><%= templates[i].newstitle %></h5>
-                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn btn-primary">View Template</a>
+                            </div>
+                            <div class="card-body bg-transparent d-flex justify-content-center">
+                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn mr-2">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="/sitefy/templates/<%= templates[i]._id %>/edit?type=<%= templates[i].templateType %>" class="btn mr-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <form action="/sitefy/templates/<%= templates[i]._id %>?_method=DELETE&type=<%= templates[i].templateType %>" method="POST" class="m-0">
+                                    <button type="submit" class="btn">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         <% } else if (templates[i].templateType === 'template4') { %>
-                            <img src="<%= templates[i].backgroundimage %>" class="card-img-top" alt="Template Image">
-                            <div class="card-body">
+                            <div class="card-img-container">
+                                <img src="<%= templates[i].backgroundimage %>" class="card-img-top" alt="Template Image">
+                                <div class="overlay-box"></div>
                                 <h5 class="card-title"><%= templates[i].restaurantname %></h5>
-                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn btn-primary">View Template</a>
+                            </div>
+                            <div class="card-body bg-transparent d-flex justify-content-center">
+                                <a href="/sitefy/templates/<%= templates[i]._id %>" class="btn mr-2">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="/sitefy/templates/<%= templates[i]._id %>/edit?type=<%= templates[i].templateType %>" class="btn mr-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <form action="/sitefy/templates/<%= templates[i]._id %>?_method=DELETE&type=<%= templates[i].templateType %>" method="POST" class="m-0">
+                                    <button type="submit" class="btn">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         <% } %>
                     </div>

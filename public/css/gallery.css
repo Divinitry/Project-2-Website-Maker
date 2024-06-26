@@ -9,9 +9,10 @@ body, html {
     position: relative;
     min-height: 100%;
     background-color: #eaeaea;
+    text-transform: uppercase;
 }
 
-.bluetext{
+.bluetext {
     color: #0046ba;
 }
 
@@ -31,11 +32,11 @@ body, html {
     color: black;
 }
 
-.nav-text{
+.nav-text {
     position: relative;
 }
 
-.nav-text:after{
+.nav-text:after {
     content: "";
     position: absolute;
     background-color: #0046ba;
@@ -46,7 +47,7 @@ body, html {
     transition: 0.4s;
 }
 
-.nav-text:hover:after{
+.nav-text:hover:after {
     content: "";
     position: absolute;
     background-color: #0046ba;
@@ -75,14 +76,77 @@ body, html {
     font-style: normal;
 }
 
-.title-container{
-    padding-top: 100px;
+.title-container {
+    padding-top: 50px;
 }
 
-h1{
+h1 {
     font-size: 4rem;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 40px;
+}
+
+.gallery-container {
+    padding-top: 40px;
+}
+
+.card-img-container {
+    position: relative;
+}
+
+/* This border on hover animation is not mine i got it from here https://codepen.io/t_afif/pen/xxpRrOG */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    border-radius: 0;
+}
+
+.card-img-container::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 60%;
+    background-color: rgb(0, 0, 0);
+    z-index: 1; 
+    transform: translate(-50%, -50%);
+}
+
+.card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2; 
+    text-align: center;
+}
+
+.card{
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    --c: #000000; /* the border color */
+    --b: 2px;    /* the border thickness*/
+    --g: 5px;     /* the gap on hover */
+    
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%,var(--c) 0;
+    background: 
+      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g))
+       var(--_i,200%) 0  /200% var(--_i,var(--b))  no-repeat,
+      conic-gradient(            at bottom var(--b) left  var(--b),var(--_g))
+       0   var(--_i,200%)/var(--_i,var(--b)) 200%  no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
 }
 

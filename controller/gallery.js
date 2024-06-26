@@ -5,8 +5,6 @@ const Template2 = require('../models/template2');
 const Template3 = require('../models/template3');
 const Template4 = require('../models/template4');
 
-// I N D U C E S 
-
 // INDEX
 router.get('/', async (req, res) => {
     try {
@@ -37,14 +35,6 @@ router.get('/', async (req, res) => {
         res.status(500).send("Error retrieving templates: " + error.message);
     }
 });
-
-// DELETE
-
-// UPDATE
-
-// EDIT
-
-// SHOW
 
 
 module.exports = router;

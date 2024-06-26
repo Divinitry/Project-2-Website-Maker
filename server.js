@@ -12,7 +12,6 @@ const port = 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 app.use(express.static('public')); 
 
@@ -20,7 +19,8 @@ app.use('/sitefy', homeRouter);
 app.use('/sitefy/templates', templateRouter);
 app.use('/sitefy/gallery', galleryRouter);
 
-const mongoURI = "mongodb://127.0.0.1:27017/websites"
+const mongoURI = "mongodb://127.0.0.1:27017/websites" 
+// "mongodb+srv://spencer:sebpt319@sebpt319.9ktotgf.mongodb.net/"
 
 // MONGODB
 async function connectToMongo() {

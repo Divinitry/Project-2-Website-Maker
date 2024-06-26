@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Edit Template</title>
+    <link rel="icon" href="/images/favicon_io/favicon-16x16.png" type="image/png">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                sitefy
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/sitefy/"><span class="nav-text">home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sitefy/templates"><span class="nav-text">templates</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sitefy/gallery"><span class="nav-text">gallery</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center">
+    <h1>
+        <% if (templateType === 'template1'){ %>
+            edit your blog website!
+        <%} else if (templateType === 'template2') {%>
+            edit your shop website!
+        <%} else if (templateType === 'template3') {%>
+            edit your news website!
+        <%} else if (templateType === 'template4') {%>
+            edit your restaurant website!
+        <%}%>
+    </h1>
+    </div>
+
+    <div class="container template-container">
+        <form action="/sitefy/templates/<%= template._id %>?_method=PUT&type=<%= templateType %>" method="POST">
+            <input type="hidden" name="templateType" value="<%= templateType %>">
+            <% if (templateType === 'template1') { %>
+                <div class="form-group">
+                    <label for="companyName">Company name:</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" value="<%= template.companyName %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="brandName">Brand name:</label>
+                    <input type="text" class="form-control" id="brandName" name="brandName" value="<%= template.brandName %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="image1">Image 1 URL:</label>
+                    <input type="text" class="form-control" id="image1" name="image1" value="<%= template.image1 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="image2">Image 2 URL:</label>
+                    <input type="text" class="form-control" id="image2" name="image2" value="<%= template.image2 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="image3">Image 3 URL:</label>
+                    <input type="text" class="form-control" id="image3" name="image3" value="<%= template.image3 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogName">Blog name:</label>
+                    <input type="text" class="form-control" id="blogName" name="blogName" value="<%= template.blogName %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogPost">Blog post:</label>
+                    <textarea class="form-control" id="blogPost" name="blogPost" required><%= template.blogPost %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="iconImage1">Icon image 1 URL:</label>
+                    <input type="text" class="form-control" id="iconImage1" name="iconImage1" value="<%= template.iconImage1 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="iconImage2">Icon image 2 URL:</label>
+                    <input type="text" class="form-control" id="iconImage2" name="iconImage2" value="<%= template.iconImage2 %>" required> 
+                </div>
+                <div class="form-group">
+                    <label for="bodyBgColor">Body background color:</label>
+                    <input type="color" class="form-control colorbox" id="bodyBgColor" name="bodyBgColor" value="<%= template.bodyBgColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="navbarBgColor">Navbar background color:</label>
+                    <input type="color" class="form-control colorbox" id="navbarBgColor" name="navbarBgColor" value="<%= template.navbarBgColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="navbarBrandColor">Navbar brand color:</label>
+                    <input type="color" class="form-control colorbox" id="navbarBrandColor" name="navbarBrandColor" value="<%= template.navbarBrandColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="navbarLinkColor">Navbar link color:</label>
+                    <input type="color" class="form-control colorbox" id="navbarLinkColor" name="navbarLinkColor" value="<%= template.navbarLinkColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="titleColor">Title color:</label>
+                    <input type="color" class="form-control colorbox" id="titleColor" name="titleColor" value="<%= template.titleColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitleColor">Subtitle color:</label>
+                    <input type="color" class="form-control colorbox" id="subtitleColor" name="subtitleColor" value="<%= template.subtitleColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="secondNavbarBgColor">Second navbar background color:</label>
+                    <input type="color" class="form-control colorbox" id="secondNavbarBgColor" name="secondNavbarBgColor" value="<%= template.secondNavbarBgColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="buttonBgColor">Button background color:</label>
+                    <input type="color" class="form-control colorbox" id="buttonBgColor" name="buttonBgColor" value="<%= template.buttonBgColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="buttonTextColor">Button text color:</label>
+                    <input type="color" class="form-control colorbox" id="buttonTextColor" name="buttonTextColor" value="<%= template.buttonTextColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="secondNavLinkColor">Second navbar link color:</label>
+                    <input type="color" class="form-control colorbox" id="secondNavLinkColor" name="secondNavLinkColor" value="<%= template.secondNavLinkColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitlePColor">Subtitle paragraph color:</label>
+                    <input type="color" class="form-control colorbox" id="subtitlePColor" name="subtitlePColor" value="<%= template.subtitlePColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="postH4Color">Post header color:</label>
+                    <input type="color" class="form-control colorbox" id="postH4Color" name="postH4Color" value="<%= template.postH4Color %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="postPColor">Post paragraph color:</label>
+                    <input type="color" class="form-control colorbox" id="postPColor" name="postPColor" value="<%= template.postPColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="overlayBgColor">Overlay background color:</label>
+                    <input type="color" class="form-control colorbox" id="overlayBgColor" name="overlayBgColor" value="<%= template.overlayBgColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="overlayTextColor">Overlay text color:</label>
+                    <input type="color" class="form-control colorbox" id="overlayTextColor" name="overlayTextColor" value="<%= template.overlayTextColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="footerBgColor">Footer background color:</label>
+                    <input type="color" class="form-control colorbox" id="footerBgColor" name="footerBgColor" value="<%= template.footerBgColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="footerNavLinkColor">Footer navbar link color:</label>
+                    <input type="color" class="form-control colorbox" id="footerNavLinkColor" name="footerNavLinkColor" value="<%= template.footerNavLinkColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="footerSocialLinkColor">Footer social link color:</label>
+                    <input type="color" class="form-control" id="footerSocialLinkColor" name="footerSocialLinkColor" value="<%= template.footerSocialLinkColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="copyrightTextColor">Copyright text color:</label>
+                    <input type="color" class="form-control" id="copyrightTextColor" name="copyrightTextColor" value="<%= template.copyrightTextColor %>" required>
+                </div>     
+            
+            <% } else if (templateType === 'template2') { %>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<%= template.title %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="leftImage">Left image URL:</label>
+                    <input type="text" class="form-control" id="leftImage" name="leftImage" value="<%= template.leftImage %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="rightImage">Right image URL:</label>
+                    <input type="text" class="form-control" id="rightImage" name="rightImage" value="<%= template.rightImage %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="titleColor">Title color:</label>
+                    <input type="color" class="form-control colorbox" id="titleColor" name="titleColor" value="<%= template.titleColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="navLinkColor">Nav link color:</label>
+                    <input type="color" class="form-control colorbox" id="navLinkColor" name="navLinkColor" value="<%= template.navLinkColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="buttonBackgroundColor">Button background color:</label>
+                    <input type="color" class="form-control colorbox" id="buttonBackgroundColor" name="buttonBackgroundColor" value="<%= template.buttonBackgroundColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="buttonTextColor">Button text color:</label>
+                    <input type="color" class="form-control colorbox" id="buttonTextColor" name="buttonTextColor" value="<%= template.buttonTextColor %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="shopitem">Shop item:</label>
+                    <input type="text" class="form-control" id="shopitem" name="shopitem" value="<%= template.shopitem %>" required>
+                </div>
+            <% } else if (templateType === 'template3') { %>
+
+                <div class="form-group">
+                    <label for="newstitle">News title:</label>
+                    <input type="text" class="form-control" id="newstitle" name="newstitle" value="<%= template.newstitle %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle1">Subtitle 1:</label>
+                    <input type="text" class="form-control" id="subtitle1" name="subtitle1" value="<%= template.subtitle1 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="paragraph1">Paragraph 1:</label>
+                    <textarea class="form-control" id="paragraph1" name="paragraph1" required><%= template.paragraph1 %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle2">Subtitle 2:</label>
+                    <input type="text" class="form-control" id="subtitle2" name="subtitle2" value="<%= template.subtitle2 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="paragraph2">Paragraph 2:</label>
+                    <textarea class="form-control" id="paragraph2" name="paragraph2" required><%= template.paragraph2 %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle3">Subtitle 3:</label>
+                    <input type="text" class="form-control" id="subtitle3" name="subtitle3" value="<%= template.subtitle3 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="paragraph3">Paragraph 3:</label>
+                    <textarea class="form-control" id="paragraph3" name="paragraph3" required><%= template.paragraph3 %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle4">Subtitle 4:</label>
+                    <input type="text" class="form-control" id="subtitle4" name="subtitle4" value="<%= template.subtitle4 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="paragraph4">Paragraph 4:</label>
+                    <textarea class="form-control" id="paragraph4" name="paragraph4" required><%= template.paragraph4 %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle5">Subtitle 5:</label>
+                    <input type="text" class="form-control" id="subtitle5" name="subtitle5" value="<%= template.subtitle5 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="paragraph5">Paragraph 5:</label>
+                    <textarea class="form-control" id="paragraph5" name="paragraph5" required><%= template.paragraph5 %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="headline">Headline:</label>
+                    <input type="text" class="form-control" id="headline" name="headline" value="<%= template.headline %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="headlineimage">Headline image:</label>
+                    <input type="text" class="form-control" id="headlineimage" name="headlineimage" value="<%= template.headlineimage %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="headlinep">Headline paragraph:</label>
+                    <textarea class="form-control" id="headlinep" name="headlinep" required><%= template.headlinep %></textarea>
+                </div>
+
+            <% } else if (templateType === 'template4') { %>
+
+                <div class="form-group">
+                    <label for="restaurantname">Restaurant name:</label>
+                    <input type="text" class="form-control" id="restaurantname" name="restaurantname" value="<%= template.restaurantname %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="backgroundimage">Background image URL:</label>
+                    <input type="text" class="form-control" id="backgroundimage" name="backgroundimage" value="<%= template.backgroundimage %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="headerh1">Header H1:</label>
+                    <input type="text" class="form-control" id="headerh1" name="headerh1" value="<%= template.headerh1 %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="headerp">Header paragraph:</label>
+                    <textarea class="form-control" id="headerp" name="headerp" required><%= template.headerp %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fontcolor">Font color:</label>
+                    <input type="color" class="form-control colorbox" id="fontcolor" name="fontcolor" value="<%= template.fontcolor %>" required>
+                </div>
+
+            <% } %>
+            <div class="form-buttons">
+                <button type="submit">update</button>
+                <button type="reset">reset</button>
+            </div>  
+        </form>
+    </div>
+</body>
+</html>
