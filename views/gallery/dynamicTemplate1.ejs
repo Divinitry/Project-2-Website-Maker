@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/css/blog.css">
     <title>Blog Post</title>
     <style>
+        body{
+            background-color: #ffffff;
+        }
         .container1 {
             width: 70%;
         }
@@ -155,176 +158,183 @@
         }
 
         /* Dynamic styles */
+        body {
+            background-color: <%= template.bodyBgColor %>; 
+        }
+
         .navbar-custom {
-            background-color: '<%= NAVBAR_BG_COLOR %>';
+            background-color: <%= NAVBAR_BG_COLOR %>;
         }
 
         .navbar-brand-custom {
-            color: '<%= NAVBAR_BRAND_COLOR %>';
+            color: <%= NAVBAR_BRAND_COLOR %>;
         }
 
         .nav-link-custom {
-            color: '<%= NAVBAR_LINK_COLOR %>';
+            color: <%= NAVBAR_LINK_COLOR %>;
         }
 
         .title-color {
-            color: '<%= TITLE_COLOR %>';
+            color: <%= TITLE_COLOR %>;
         }
 
         .subtitle-color {
-            color: '<%= SUBTITLE_COLOR %>';
+            color: <%= SUBTITLE_COLOR %>;
         }
 
         .second-navbar-custom {
-            background-color: '<%= SECOND_NAVBAR_BG_COLOR %>';
+            background-color: <%= SECOND_NAVBAR_BG_COLOR %>;
         }
 
         .btn-custom {
-            background-color: '<%= BUTTON_BG_COLOR %>';
-            color: '<%= BUTTON_TEXT_COLOR %>';
+            background-color: <%= BUTTON_BG_COLOR %>;
+            color: <%= BUTTON_TEXT_COLOR %>;
         }
 
         .second-nav-link-custom {
-            color: '<%= SECOND_NAV_LINK_COLOR %>';
+            color: <%= SECOND_NAV_LINK_COLOR %>;
         }
 
         .subtitle-p-custom {
-            color: '<%= SUBTITLE_P_COLOR %>';
+            color: <%= SUBTITLE_P_COLOR %>;
         }
 
         .post-h4-custom {
-            color: '<%= POST_H4_COLOR %>';
+            color: <%= POST_H4_COLOR %>;
         }
 
         .post-p-custom {
-            color: '<%= POST_P_COLOR %>';
+            color: <%= POST_P_COLOR %>;
         }
 
         .overlay-custom {
-            background-color: '<%= OVERLAY_BG_COLOR %>';
+            background-color: <%= OVERLAY_BG_COLOR %>;
         }
 
         .overlay-text-custom {
-            color: '<%= OVERLAY_TEXT_COLOR %>';
+            color: <%= OVERLAY_TEXT_COLOR %>;
         }
 
         .footer-custom {
-            background-color: '<%= FOOTER_BG_COLOR %>';
+            background-color: <%= FOOTER_BG_COLOR %>;
         }
 
         .footer-nav-link-custom {
-            color: '<%= FOOTER_NAV_LINK_COLOR %>';
+            color: <%= FOOTER_NAV_LINK_COLOR %>;
         }
 
         .footer-social-link-custom {
-            color: '<%= FOOTER_SOCIAL_LINK_COLOR %>';
+            color: <%= FOOTER_SOCIAL_LINK_COLOR %>;
         }
 
         .copyright-custom {
-            color: '<%= COPYRIGHT_TEXT_COLOR %>';
+            color: <%= COPYRIGHT_TEXT_COLOR %>;
         }
     </style>
 </head>
 <body>
     <div class="container container1">
-        <!-- nav bar -->
-        <div class="navbar d-flex justify-content-between align-items-center navbar-custom">
-            <a class="navbar-brand brand-name navbar-brand-custom"><%=COMPANYNAME%></a>
+        <!-- Navigation bar -->
+        <div class="navbar d-flex justify-content-between align-items-center" style="background-color: <%= template.navbarBgColor %>;">
+            <a class="navbar-brand" style="color: <%= template.navbarBrandColor %>;"><%= template.companyName %></a>
             <ul class="nav">
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#"><i class="fab fa-instagram"></i></a></li>
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#"><i class="fab fa-youtube"></i></a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.navbarLinkColor %>;" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.navbarLinkColor %>;" href="#"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.navbarLinkColor %>;" href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.navbarLinkColor %>;" href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
 
-        <!-- title -->
+        <!-- Title section -->
         <div class="container title-card d-flex justify-content-center align-items-center">
             <div class="title-container">
-                <h1 class="title-color"><%=BRANDNAME%>.</h1>
-                <p class="subtitle subtitle-color">Lifestyle Blog</p>
+                <h1 style="color: <%= template.titleColor %>;"><%= template.brandName %>.</h1>
+                <p class="subtitle" style="color: <%= template.subtitleColor %>;">Lifestyle Blog</p>
             </div>
         </div>
 
-        <div class="navbar d-flex justify-content-between align-items-center second-navbar-custom">
-            <button class="btn btn-dark btn-custom">SUBSCRIBE</button>
+        <!-- Second navigation bar -->
+        <div class="navbar d-flex justify-content-between align-items-center" style="background-color: <%= template.secondNavbarBgColor %>;">
+            <button class="btn btn-dark" style="background-color: <%= template.buttonBgColor %>; color: <%= template.buttonTextColor %>;">SUBSCRIBE</button>
             <ul class="nav ml-auto second-nav">
-                <li class="nav-item"><a class="nav-link second-nav-link-custom" href="">HOME</a></li>
-                <li class="nav-item"><a class="nav-link second-nav-link-custom" href="">PAGES</a></li>
-                <li class="nav-item"><a class="nav-link second-nav-link-custom" href="">CATEGORY</a></li>
-                <li class="nav-item"><a class="nav-link second-nav-link-custom" href="">ABOUT US</a></li>
-                <li class="nav-item"><a class="nav-link second-nav-link-custom" href="">CONTACT</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.secondNavLinkColor %>;" href="">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.secondNavLinkColor %>;" href="">PAGES</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.secondNavLinkColor %>;" href="">CATEGORY</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.secondNavLinkColor %>;" href="">ABOUT US</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: <%= template.secondNavLinkColor %>;" href="">CONTACT</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Carousel -->
+    <!-- Carousel section -->
     <div class="container carousel-div">
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="<%=IMAGE1%>" alt="First slide">
+                    <img class="d-block w-100" src="<%= template.image1 %>" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="<%=IMAGE2%>" alt="Second slide">
+                    <img class="d-block w-100" src="<%= template.image2 %>" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="<%=IMAGE3%>" alt="Third slide">
+                    <img class="d-block w-100" src="<%= template.image3 %>" alt="Third slide">
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Blog posts section -->
     <div class="container container2">
         <div class="row row-gap text-center">
             <div class="col-12 col-md-4">
                 <div class="post-thumbnail">
-                    <p class="subtitle-p subtitle-p-custom">LIFESTYLE</p>
-                    <h4 class="post-h4 post-h4-custom"><%BLOGNAME%></h4>
-                    <p class="post-p post-p-custom"><%BLOGPOST%></p>
+                    <p class="subtitle-p" style="color: <%= template.subtitlePColor %>;">LIFESTYLE</p>
+                    <h4 class="post-h4" style="color: <%= template.postH4Color %>;"><%= template.blogName %></h4>
+                    <p class="post-p" style="color: <%= template.postPColor %>;"><%= template.blogPost %></p>
                 </div>
-                <button class="btn btn-dark d-flex justify-content-between btn-custom">Read More</button>
+                <button class="btn btn-dark" style="background-color: <%= template.buttonBgColor %>; color: <%= template.buttonTextColor %>;">Read More</button>
             </div>
             <div class="col-12 col-md-4">
                 <div class="post-thumbnail">
-                    <img src="<%ICONIMAGE1%>" class="img-fluid" alt="Post 2">
-                    <div class="overlay overlay-custom">
-                        <h4 class="overlay-text overlay-text-custom">Lifestyle Posts</h4>
+                    <img src="<%= template.iconImage1 %>" class="img-fluid" alt="Post 2">
+                    <div class="overlay" style="background-color: <%= template.overlayBgColor %>;">
+                        <h4 class="overlay-text" style="color: <%= template.overlayTextColor %>;">Lifestyle Posts</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-4">
                 <div class="post-thumbnail">
-                    <img src="<%ICONIMAGE2%>" class="img-fluid" alt="Post 3">
-                    <div class="overlay overlay-custom">
-                        <h4 class="overlay-text overlay-text-custom">Latest Posts</h4>
+                    <img src="<%= template.iconImage2 %>" class="img-fluid" alt="Post 3">
+                    <div class="overlay" style="background-color: <%= template.overlayBgColor %>;">
+                        <h4 class="overlay-text" style="color: <%= template.overlayTextColor %>;">Latest Posts</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer footer-custom">
+    <!-- Footer section -->
+    <footer class="footer" style="background-color: <%= template.footerBgColor %>;">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <ul class="nav">
-                        <li class="nav-item"><a class="nav-link footer-nav-link-custom" href="">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link footer-nav-link-custom" href="">ABOUT US</a></li>
-                        <li class="nav-link footer-nav-link-custom" href="">LIFESTYLE</a></li>
-                        <li class="nav-link footer-nav-link-custom" href="">TRAVEL</a></li>
-                        <li class="nav-link footer-nav-link-custom" href="">MUSIC</a></li>
-                        <li class="nav-link footer-nav-link-custom" href="">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerNavLinkColor %>;" href="">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerNavLinkColor %>;" href="">ABOUT US</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerNavLinkColor %>;" href="">LIFESTYLE</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerNavLinkColor %>;" href="">TRAVEL</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerNavLinkColor %>;" href="">MUSIC</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerNavLinkColor %>;" href="">CONTACT</a></li>
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <ul class="nav social-nav">
-                        <li class="nav-item"><a class="nav-link footer-social-link-custom" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="nav-item"><a class="nav-link footer-social-link-custom" href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li class="nav-item"><a class="nav-link footer-social-link-custom" href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li class="nav-item"><a class="nav-link footer-social-link-custom" href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerSocialLinkColor %>;" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerSocialLinkColor %>;" href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerSocialLinkColor %>;" href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: <%= template.footerSocialLinkColor %>;" href="#"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Show Page</title>
+    <style>
+        .fixed-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2rem;
+            padding: 5px;
+            text-align: center;
+            z-index: 99;
+        }
+
+        .fixed-icon i {
+            font-size: 3rem;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery-container">
+        <% if (templateType==='template1' ) { %>
+            <%- include('dynamicTemplate1', { bodyBgColor: template.bodyBgColor, NAVBAR_BG_COLOR:
+                template.navbarBgColor, NAVBAR_BRAND_COLOR: template.navbarBrandColor, NAVBAR_LINK_COLOR:
+                template.navbarLinkColor, TITLE_COLOR: template.titleColor, SUBTITLE_COLOR: template.subtitleColor,
+                SECOND_NAVBAR_BG_COLOR: template.secondNavbarBgColor, BUTTON_BG_COLOR: template.buttonBgColor,
+                BUTTON_TEXT_COLOR: template.buttonTextColor, SECOND_NAV_LINK_COLOR: template.secondNavLinkColor,
+                SUBTITLE_P_COLOR: template.subtitlePColor, POST_H4_COLOR: template.postH4Color, POST_P_COLOR:
+                template.postPColor, OVERLAY_BG_COLOR: template.overlayBgColor, OVERLAY_TEXT_COLOR:
+                template.overlayTextColor, FOOTER_BG_COLOR: template.footerBgColor, FOOTER_NAV_LINK_COLOR:
+                template.footerNavLinkColor, FOOTER_SOCIAL_LINK_COLOR: template.footerSocialLinkColor,
+                COPYRIGHT_TEXT_COLOR: template.copyrightTextColor, COMPANYNAME: template.companyName, BRANDNAME:
+                template.brandName, IMAGE1: template.image1, IMAGE2: template.image2, IMAGE3: template.image3, BLOGNAME:
+                template.blogName, BLOGPOST: template.blogPost, ICONIMAGE1: template.iconImage1 }) %>
+                <% } else if (templateType==='template2' ) { %>
+                    <%- include('dynamicTemplate2', { leftImage: template.leftImage, rightImage: template.rightImage,
+                        title: template.title, titleColor: template.titleColor, navLinkColor: template.navLinkColor,
+                        buttonBackgroundColor: template.buttonBackgroundColor, buttonTextColor:
+                        template.buttonTextColor, shopitem: template.shopitem }) %>
+                        <% } else if (templateType==='template3' ) { %>
+                            <%- include('dynamicTemplate3', { newstitle: template.newstitle, subtitle1:
+                                template.subtitle1, paragraph1: template.paragraph1, subtitle2: template.subtitle2,
+                                paragraph2: template.paragraph2, subtitle3: template.subtitle3, paragraph3:
+                                template.paragraph3, subtitle4: template.subtitle4, paragraph4: template.paragraph4,
+                                subtitle5: template.subtitle5, paragraph5: template.paragraph5, headline:
+                                template.headline, headlineimage: template.headlineimage, headlinep: template.headlinep
+                                }) %>
+                                <% } else if (templateType==='template4' ) { %>
+                                    <%- include('dynamicTemplate4', { restaurantname: template.restaurantname,
+                                        backgroundimage: template.backgroundimage, headerh1: template.headerh1, headerp:
+                                        template.headerp, fontcolor: template.fontcolor }) %>
+                                        <% } %>
+    </div>
+
+    <a href="/sitefy/gallery" class="fixed-icon"><i class="fa-solid fa-circle-arrow-left"
+            style="color: black;"></i></a>
+
+</body>
+
+</html>

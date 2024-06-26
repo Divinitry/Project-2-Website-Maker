@@ -45,10 +45,13 @@
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 36px;
-            font-weight: bolder;
+            font-size: 5rem;
+            font-weight: 1000;
+            font-family: 'Oswald', sans-serif; 
             z-index: 3;
-            color: '<%= titleColor %>'; 
+            letter-spacing: -1px;
+            color: <%= titleColor %>; 
+            text-transform: uppercase;
         }
 
         .navbar {
@@ -59,7 +62,7 @@
         }
 
         .nav-link {
-            color: '<%= navLinkColor %>' !important;
+            color: <%= navLinkColor %> !important;
             font-weight: bold;
         }
 
@@ -72,9 +75,10 @@
         }
 
         .btn-custom {
-            background-color: '<%= buttonBackgroundColor %>'; 
-            color: '<%= buttonTextColor %>';
+            background-color: <%= buttonBackgroundColor %>; 
+            color: <%= buttonTextColor %>;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
         .nav-item {

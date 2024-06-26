@@ -51,7 +51,7 @@ router.post('/create', async (req, res) => {
         } else if (template === 'template4') {
             newInstance = new Template4(data);
         } else {
-            return res.status(400).send("Invalid template selected");
+            return res.status(400).send("Please select a template");
         }
 
         await newInstance.save();
@@ -60,5 +60,43 @@ router.post('/create', async (req, res) => {
         res.status(500).send("Error creating template instance: " + error.message);
     }
 });
+
+// SHOW
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
+    let template;
+    let templateType;
+    try {
+        template = await Template1.findById(id);
+        if (template) {
+            templateType = 'template1';
+        } else {
+            template = await Template2.findById(id);
+            if (template) {
+                templateType = 'template2';
+            }
+            else {
+                template = await Template3.findById(id);
+                if (template) {
+                    templateType = 'template3';
+                }
+                else {
+                    template = await Template4.findById(id);
+                    if (template) {
+                        templateType = 'template4';
+                    }
+                }
+            }
+        }
+        res.render('gallery/show.ejs', {
+            template: template.toObject(),
+            templateType: templateType
+        });
+    } catch (error) {
+        res.status(500).send("Error: " + error.message);
+    }
+});
+
+
 
 module.exports = router;

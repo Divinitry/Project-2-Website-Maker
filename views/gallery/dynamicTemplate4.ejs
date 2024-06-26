@@ -7,8 +7,17 @@
     <title>Restaurant Template</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body{
-            color: '<%=fontcolor%> !important';
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            color: <%=fontcolor%> !important;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .navbar {
             background-color: transparent !important;
@@ -18,27 +27,32 @@
             padding-left: 13%;
             padding-right: 13%;
         }
-
+        .order-button{
+            outline: 1px solid <%=fontcolor%> !important;
+        }
         .navbar-brand {
             font-weight: bold;
+            color: <%=fontcolor%> !important;
         }
 
         .navbar .nav-link {
-            color: white !important;
+            color:  <%=fontcolor%> !important;
         }
-
         .hero-section {
             background-image: url('<%=backgroundimage%>');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: <%=fontcolor%> !important;
             text-align: center;
+            position: relative;
+            flex: 1;
         }
-
         .hero-section::before {
             content: "";
             position: absolute;
@@ -49,27 +63,24 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
-
         .hero-section>div {
             position: relative;
             z-index: 2;
         }
-
         .hero-section h1 {
             font-size: 4.5rem;
             font-weight: bold;
         }
-
         .hero-section p {
             font-size: 1.8rem;
             margin-bottom: 20px;
         }
-
         .btn-order {
             font-size: 1.2rem;
             padding: 10px 20px;
-            border: 2px solid white;
+            border: 2px solid <%=fontcolor%> !important;;
             font-weight: bold;
+            color: <%=fontcolor%> !important;
         }
     </style>
 </head>
@@ -104,7 +115,7 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-outline-light btn order-button" href="#">Order Online</a>
+                    <a class="nav-link btn order-button" href="#">Order Online</a>
                 </li>
             </ul>
         </div>

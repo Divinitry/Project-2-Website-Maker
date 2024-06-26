@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const template1Schema = new Schema({
+    bodyBgColor: { type: String, required: true},
     navbarBgColor: { type: String, required: true },
     navbarBrandColor: { type: String, required: true },
     navbarLinkColor: { type: String, required: true },
