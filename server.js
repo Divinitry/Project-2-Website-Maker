@@ -16,6 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static('public')); 
 
+app.get('/', (req, res) =>{
+    res.redirect('/sitefy')
+})
+
 app.use('/sitefy', homeRouter);
 app.use('/sitefy/templates', templateRouter);
 app.use('/sitefy/gallery', galleryRouter);
