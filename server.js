@@ -22,10 +22,6 @@ app.use('/sitefy/gallery', galleryRouter);
 
 const mongoURI = process.env.MONGOURI 
 
-app.get('/', (req, res) => {
-    res.send('Welcome to Sitefy!');
-});
-
 // MONGODB
 async function connectToMongo() {
     try {
