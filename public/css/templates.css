@@ -89,10 +89,6 @@ body, html {
     border: 0;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
 .card-title{
     font-size: 2rem;
     text-align: left;
@@ -133,10 +129,22 @@ body, html {
     right: 10px;
     color: grey;
     font-size: 1.2rem;
+    transition: ease 0.3s;
+}
+
+.icon-top-right:hover{
+    transform: scale(1.1);
 }
 
 .card-img-top{
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: filter 0.3s ease, 0.3s ease;
+}
+
+.card-img-top:hover{
+    filter: brightness(0.9);
+    border-radius: 0;
 }
 
 .btn{
@@ -170,4 +178,13 @@ h5{
 
 .card-text {
     flex-grow: 1;
+}
+
+.fa-circle-plus:hover{
+    color: #005bec !important;
+    transition: 0.3s ease;;
+}
+
+.fa-circle-plus:active{
+    transform: scale(0.9);
 }

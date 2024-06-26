@@ -73,9 +73,7 @@ router.put('/:id', async (req, res) => {
         } else if (templateType === "template4") {
             updatedTemplate = await Template4.findByIdAndUpdate(templateId, req.body, { new: true });
         }
-        if (!updatedTemplate) {
-            return res.status(404).send("No template found with that ID.");
-        }
+
         res.redirect('/sitefy/gallery');
     } catch (error) {
         console.error("Update error:", error);
